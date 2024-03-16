@@ -1,0 +1,18 @@
+// Report on linear regression //
+
+Number of records: 2938
+
+Countries with the top three life expectancies:
+
+Country: Belgium | Life expectancy: 89.0
+Country: Finland | Life expectancy: 89.0
+Country: France | Life expectancy: 89.0
+
+Coefficients (slopes) and intercepts for each feature:
+
+GDP: Slope = 0.0004, Intercept = 6.661
+Total expenditure: Slope = 0.0035, Intercept = 6.914
+Alcohol: Slope = 0.0966, Intercept = 2.318
+
+Average error for all three models: 0.692
+Standard deviation for predictions: 0.017
