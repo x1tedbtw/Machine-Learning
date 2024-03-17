@@ -98,8 +98,3 @@ std_deviation = np.std(errors)
 
 print("Average error for all three models:", average_error)
 print("Standard deviation for predictions:", std_deviation)
-
-
-# Multilinear regression
-
-
