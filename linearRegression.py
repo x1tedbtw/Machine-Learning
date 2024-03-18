@@ -34,12 +34,12 @@ for index, value in top_three_values.items():
 # Linear regression
 # 3
 imputer = SimpleImputer(strategy='mean')
-df_imputed = pd.DataFrame(imputer.fit_transform(df[['GDP', 'Total expenditure', 'Alcohol', 'Life expectancy ']]),
-                          columns=['GDP', 'Total expenditure', 'Alcohol', 'Life expectancy '])
+df_imputed = pd.DataFrame(imputer.fit_transform(df[['GDP', 'Total expenditure', 'Alcohol', 'Life Expectancy']]),
+                          columns=['GDP', 'Total expenditure', 'Alcohol', 'Life Expectancy'])
 
 # Define features and target variable
 features = ['GDP', 'Total expenditure', 'Alcohol']
-target = 'Life expectancy '
+target = 'Life expectancy'
 
 plt.figure(figsize=(15, 5))
 
@@ -57,10 +57,6 @@ for i, feature in enumerate(features, 1):
     # Coefficients and intercept
     slope = lr.coef_[0]
     intercept = lr.intercept_
-
-    print(f"For {feature}:")
-    print(f"Slope: {slope}")
-    print(f"Intercept: {intercept}")
 
     y_pred_train = lr.predict(X_train)
 
@@ -104,7 +100,6 @@ print("Average error for all three models:", average_error)
 print("Standard deviation for predictions:", std_deviation)
 
 
-
-
+# Multilinear regression
 
 
