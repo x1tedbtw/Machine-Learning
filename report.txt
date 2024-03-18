@@ -10,9 +10,42 @@ Country: France | Life expectancy: 89.0
 
 Coefficients (slopes) and intercepts for each feature:
 
-GDP: Slope = 0.0004, Intercept = 6.661
-Total expenditure: Slope = 0.0035, Intercept = 6.914
-Alcohol: Slope = 0.0966, Intercept = 2.318
+GDP: Slope = 0.0003, Intercept = 66.922
+Total expenditure: Slope = 0.7477, Intercept = 64.704
+Alcohol: Slope = 0.9383, Intercept = 64.863
 
-Average error for all three models: 0.692
-Standard deviation for predictions: 0.017
+Average error for all three models: 6.939
+Standard deviation for predictions: 0.280
+
+// Report on multilinear regression //
+
+Coefficients (slopes) and intercepts for each feature:
+
+Adult Mortality: Slope = -0.0458, Intercept = 68.294
+Diphtheria: Slope = 0.1068, Intercept = 68.294
+Infant Deaths: Slope = 0.1208, Intercept = 68.294
+Under-five Deaths: Slope = -0.0940, Intercept = 68.294
+
+Performance Metrics:
+
+R-squared (Training): 0.6017
+R-squared (Test): 0.5995
+Mean Absolute Error: 4.2228
+Average Error: 4.2228
+Standard Deviation of Errors: 4.2102
+
+// Comparison with previous regression //
+
+Coefficients: Mixed signs, both positive and negative
+Intercept: Higher (around 68.294)
+R-squared (Test): Higher (around 0.5995)
+Mean Absolute Error: Lower (around 4.2228)
+Standard Deviation of Errors: Higher (around 4.2102)
+
+// CONCLUSION //
+
+- The current regression model, using health-related factors,
+shows better predictive performance with higher R-squared and lower Mean Absolute Error.
+- It has a higher intercept, indicating a higher baseline life expectancy.
+- Coefficients in the current model have mixed signs, suggesting varied relationships with life expectancy,
+while the previous model had positive coefficients for all features.
