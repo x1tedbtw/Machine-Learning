@@ -25,26 +25,24 @@ imputer = SimpleImputer(strategy='mean')
 df_imputed = pd.DataFrame(imputer.fit_transform(df[features + [target]]),
                           columns=features + [target])
 
-# Split data into features (X) and target variable (y)
 X = df_imputed[features]
 y = df_imputed[target]
 
-# Split data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=23)
 
-# Train the linear regression model
+# Train
 lr = LinearRegression()
 lr.fit(X_train, y_train)
 
-# Print coefficients and score for the model
+
 print("Coefficients:", lr.coef_)
 print("Intercept:", lr.intercept_)
 print("R-squared (Training):", lr.score(X_train, y_train))
 
-# Predict values for the test set
+
 y_pred_test = lr.predict(X_test)
 
-# Calculate evaluation metrics
+# Calculation evaluation metrics
 r2 = r2_score(y_test, y_pred_test)
 mae = mean_absolute_error(y_test, y_pred_test)
 

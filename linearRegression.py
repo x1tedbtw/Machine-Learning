@@ -18,7 +18,7 @@ print(f"Number of records: {len(df)}") # A
 # Life Expectancy Histogram
 le_data = df["Life expectancy "] # B
 
-plt.hist(le_data, bins=50, color='green')
+plt.hist(le_data, bins=20, color='green')
 plt.xlabel("Life expectancy ")
 plt.title('Life Expectancy Histogram')
 plt.show()
@@ -34,12 +34,12 @@ for index, value in top_three_values.items():
 # Linear regression
 # 3
 imputer = SimpleImputer(strategy='mean')
-df_imputed = pd.DataFrame(imputer.fit_transform(df[['GDP', 'Total expenditure', 'Alcohol', 'Life Expectancy']]),
-                          columns=['GDP', 'Total expenditure', 'Alcohol', 'Life Expectancy'])
+df_imputed = pd.DataFrame(imputer.fit_transform(df[['GDP', 'Total expenditure', 'Alcohol', 'Life expectancy ']]),
+                          columns=['GDP', 'Total expenditure', 'Alcohol', 'Life expectancy '])
 
-# Define features and target variable
+
 features = ['GDP', 'Total expenditure', 'Alcohol']
-target = 'Life expectancy'
+target = 'Life expectancy '
 
 plt.figure(figsize=(15, 5))
 
@@ -47,10 +47,9 @@ for i, feature in enumerate(features, 1):
     X = df_imputed[[feature]]
     y = df_imputed[target]
 
-    # Split data into train and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=23)
 
-    # Train the linear regression model
+    # Train
     lr = LinearRegression()
     lr.fit(X_train, y_train)
 
@@ -68,7 +67,7 @@ for i, feature in enumerate(features, 1):
     plt.ylabel(target)
     plt.title(f"{feature} vs {target}")
 
-    # Annotating the equation of the regression line
+    # slope and intercept
     plt.text(0.5, 0.9, f'y = {slope:.2f}x + {intercept:.2f}\nR^2 = {r2_score(y_train, y_pred_train):.2f}',
              transform=plt.gca().transAxes, fontsize=10, verticalalignment='top')
 
@@ -79,7 +78,7 @@ plt.show()
 predictions = []
 errors = []
 
-# Loop through each feature and make predictions on the test set
+# Loop through and predict
 for feature in features:
     X_train, X_test, y_train, y_test = train_test_split(df_imputed[[feature]], df_imputed[target], test_size=0.4, random_state=23)
 
@@ -92,7 +91,6 @@ for feature in features:
     predictions.append(y_pred_test)
     errors.append(error)
 
-# Calculate average error and standard deviation
 average_error = np.mean(errors)
 std_deviation = np.std(errors)
 
@@ -100,6 +98,5 @@ print("Average error for all three models:", average_error)
 print("Standard deviation for predictions:", std_deviation)
 
 
-# Multilinear regression
 
 
