@@ -7,7 +7,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.metrics import r2_score
 from sklearn.metrics import mean_absolute_error
 
-df = pd.read_csv('LifeExpectancy.csv')
+df = pd.read_csv('LinearRegression/LifeExpectancy.csv')
 
 # life expectance
 # Adult Mortality
